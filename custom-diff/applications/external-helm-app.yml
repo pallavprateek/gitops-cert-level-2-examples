@@ -22,3 +22,10 @@ spec:
     syncOptions:
       - CreateNamespace=true  
    
+  ignoreDifferences:
+    - group: core
+      kind: Secret
+      name: example-secret
+      namespace: example02 # Tried with and without, is this really needed?
+      jsonPointers:
+        - /data
